@@ -1,0 +1,44 @@
+﻿<Window x:Class="Лаб2КамашеваПарсер.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Лаб2КамашеваПарсер"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+
+
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="72.137"/>
+            <ColumnDefinition Width="27.863"/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid  Name="MetricsDataGrid" Margin="0,0,5,0"
+          AutoGenerateColumns="False" HorizontalAlignment="Left" MouseDoubleClick="MetricsDataGrid_MouseDoubleClick" >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Идентификатор угрозы" Binding="{Binding Id}" IsReadOnly="True"  />
+                <DataGridTextColumn Header="Наименование угрозы" Binding="{Binding Name}" x:Name="Name" />
+                <DataGridTextColumn Header="Описание угрозы" Binding="{Binding Description}" />
+                <DataGridTextColumn Header="Источник угрозы" Binding="{Binding Source}" />
+                <DataGridTextColumn Header="Объект воздействия угрозы" Binding="{Binding Obyect}" />
+                <DataGridTextColumn Header="Нарушение конфиденциальности" Binding="{Binding Konf}" />
+                <DataGridTextColumn Header="Нарушение целостности" Binding="{Binding Cel}" />
+                <DataGridTextColumn Header="Нарушение доступности" Binding="{Binding Dostup}" />
+                <DataGridTextColumn Header="Дата включения угрозы в БДУ" Binding="{Binding On}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Дата последнего изменения данных" Binding="{Binding Change}" IsReadOnly="True"  />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Border BorderBrush="Black" BorderThickness="1" Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="113.863,218,-186,0" VerticalAlignment="Top" Width="100"/>
+        <Button Name ="ButtonReturn" Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Margin="0,380,0,0" VerticalAlignment="Bottom" Width="49" Height="30" Click="Button_Click" IsEnabled="False"/>
+        <Button Name ="ButtonRun"  Content="Вперёд" Grid.Column="1" Margin="54,380,-3,0" Height="30" Grid.ColumnSpan="2" Click="Button_Click_1" VerticalAlignment="Bottom"/>
+        <Button Name ="ButtonShort" Grid.ColumnSpan="3" Content="Краткие угрозы" HorizontalAlignment="Right" Margin="679,0,0,0" VerticalAlignment="Top" Width="103" Height="21" HorizontalContentAlignment="Right" Click="ButtonShort_Click" VerticalContentAlignment="Top"/>
+        <Button Name ="ButtonShortReturn" Grid.ColumnSpan="2" Content="Полный список" Grid.Column="1" HorizontalAlignment="Right" Margin="0,2,0,0" VerticalAlignment="Top" Width="100" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Click="ButtonShortReturn_Click" Visibility="Hidden"/>
+        <Button Name ="ButtonSave" Grid.ColumnSpan="2" Content="Обновить" Grid.Column="1" HorizontalAlignment="Right" Margin="0,256,7,135" VerticalAlignment="Center" Width="75" HorizontalContentAlignment="Right"/>
+        <Label Name ="Tyc" Content="Даблтык на строку для получения подробной информации" HorizontalAlignment="Right" Margin="371,159,-3,0" VerticalAlignment="Top" Height="92" Width="416" Grid.ColumnSpan="3" IsEnabled="False" Visibility="Hidden" HorizontalContentAlignment="Right"/>
+
+
+    </Grid>
+</Window>
